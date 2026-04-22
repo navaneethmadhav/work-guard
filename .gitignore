@@ -1,0 +1,153 @@
+# ═══════════════════════════════════════════════════════════════
+#  WorkGuard — Workspace Monitor .gitignore
+#  Place this file in the root of workspace-monitor/
+# ═══════════════════════════════════════════════════════════════
+
+
+# ───────────────────────────────────────────────────────────────
+#  ENVIRONMENT & SECRETS  ← most important, never commit these
+# ───────────────────────────────────────────────────────────────
+.env
+.env.*
+*.env
+!.env.example
+
+
+# ───────────────────────────────────────────────────────────────
+#  PYTHON VIRTUAL ENVIRONMENTS
+# ───────────────────────────────────────────────────────────────
+venv/
+env/
+.venv/
+backend/venv/
+model_training/venv/
+**/venv/
+**/__pycache__/
+**/*.py[cod]
+**/*.pyo
+*.pyc
+
+
+# ───────────────────────────────────────────────────────────────
+#  TRAINED MODEL FILES  ← large binary files, not for git
+# ───────────────────────────────────────────────────────────────
+*.h5
+*.keras
+*.pkl
+*.pickle
+*.pt
+*.pth
+*.onnx
+*.tflite
+*.pb
+*.bin
+*.ckpt
+*.safetensors
+model_training/models/
+
+
+# ───────────────────────────────────────────────────────────────
+#  DATASET FILES  ← very large, never commit
+# ───────────────────────────────────────────────────────────────
+model_training/dataset/
+dataset/
+*.tgz
+*.tar.gz
+*.zip
+*.tar
+*.gz
+
+
+# ───────────────────────────────────────────────────────────────
+#  DEEPFACE DOWNLOADED MODEL CACHE
+#  DeepFace auto-downloads pretrained model weights here
+# ───────────────────────────────────────────────────────────────
+.deepface/
+deepface/
+~/.deepface/
+
+
+# ───────────────────────────────────────────────────────────────
+#  FRONTEND — NODE MODULES & BUILD
+# ───────────────────────────────────────────────────────────────
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+frontend/.vite/
+node_modules/
+dist/
+build/
+
+
+# ───────────────────────────────────────────────────────────────
+#  LOGS
+# ───────────────────────────────────────────────────────────────
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+
+# ───────────────────────────────────────────────────────────────
+#  TRAINING OUTPUT PLOTS & RESULTS  ← generated files
+# ───────────────────────────────────────────────────────────────
+model_training/models/*.png
+model_training/models/*.jpg
+
+
+# ───────────────────────────────────────────────────────────────
+#  INTRUDER / ALERT IMAGES SAVED LOCALLY (if any)
+# ───────────────────────────────────────────────────────────────
+backend/alerts/
+alerts/
+*.snapshot.jpg
+
+
+# ───────────────────────────────────────────────────────────────
+#  OS GENERATED FILES
+# ───────────────────────────────────────────────────────────────
+.DS_Store
+.DS_Store?
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+
+# ───────────────────────────────────────────────────────────────
+#  IDE & EDITOR FILES
+# ───────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+
+
+# ───────────────────────────────────────────────────────────────
+#  PYTEST & TESTING CACHE
+# ───────────────────────────────────────────────────────────────
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+
+# ───────────────────────────────────────────────────────────────
+#  JUPYTER NOTEBOOKS CHECKPOINTS
+# ───────────────────────────────────────────────────────────────
+.ipynb_checkpoints/
+*.ipynb
+
+
+# ───────────────────────────────────────────────────────────────
+#  TEMPORARY FILES
+# ───────────────────────────────────────────────────────────────
+tmp/
+temp/
+*.tmp
+*.temp
+*.bak
