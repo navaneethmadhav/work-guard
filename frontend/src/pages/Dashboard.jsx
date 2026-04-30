@@ -13,7 +13,7 @@ const STATUS_CONFIG = {
 export default function Dashboard() {
   const navigate = useNavigate();
   const username = localStorage.getItem("username") || "User";
-  const [monitoringActive, setMonitoringActive] = useState(false);
+  const [monitoringActive, setMonitoringActive] = useState(true);
 
   const { videoRef, canvasRef, status, faceCount, lastAlert, warnings, wsConnected } =
     useMonitor(monitoringActive);
@@ -99,13 +99,7 @@ export default function Dashboard() {
 
                 {!monitoringActive && (
                   <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/80 gap-4">
-                    <p className="text-gray-400">Monitoring is OFF</p>
-                    <button
-                      onClick={() => setMonitoringActive(true)}
-                      className="bg-blue-600 hover:bg-blue-500 px-6 py-2.5 rounded-xl font-semibold transition-colors"
-                    >
-                      ▶ Start Monitoring
-                    </button>
+                    <p className="text-gray-400">Starting camera...</p>
                   </div>
                 )}
 
@@ -119,16 +113,14 @@ export default function Dashboard() {
                 )}
               </div>
 
-              {monitoringActive && (
-                <div className="px-4 py-3 flex justify-end border-t border-gray-800">
-                  <button
-                    onClick={() => setMonitoringActive(false)}
-                    className="bg-red-900/40 hover:bg-red-900/60 text-red-300 px-4 py-2 rounded-lg text-sm transition-colors"
-                  >
-                    ⏹ Stop Monitoring
-                  </button>
-                </div>
-              )}
+              <div className="px-4 py-3 flex justify-end border-t border-gray-800">
+                <button
+                  onClick={() => setMonitoringActive(false)}
+                  className="bg-red-900/40 hover:bg-red-900/60 text-red-300 px-4 py-2 rounded-lg text-sm transition-colors"
+                >
+                  ⏹ Stop Monitoring
+                </button>
+              </div>
             </div>
           </div>
 

@@ -14,7 +14,7 @@ EMAIL_PORT          = int(os.getenv("EMAIL_PORT", 587))
 EMAIL_USER          = os.getenv("EMAIL_USER", "")
 EMAIL_PASS          = os.getenv("EMAIL_PASS", "")
 
-ALERT_COOLDOWN      = int(os.getenv("ALERT_COOLDOWN_SECONDS", 30))
+ALERT_COOLDOWN      = int(os.getenv("ALERT_COOLDOWN_SECONDS", 60))
 SIMILARITY_THRESHOLD = float(os.getenv("SIMILARITY_THRESHOLD", 0.5))
 
 IMG_SIZE            = 64
