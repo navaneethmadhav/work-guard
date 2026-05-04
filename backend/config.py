@@ -5,7 +5,7 @@ load_dotenv()
 
 MONGODB_URI         = os.getenv("MONGODB_URI", "mongodb://localhost:27017")
 DB_NAME             = os.getenv("DB_NAME", "workspace_monitor")
-JWT_SECRET          = os.getenv("JWT_SECRET", "change_this_secret_key")
+JWT_SECRET          = os.getenv("JWT_SECRET", "qwertyuiopasdfghjklzxcvbnm123456")
 JWT_ALGORITHM       = "HS256"
 JWT_EXPIRE_MINUTES  = 60 * 8
 
